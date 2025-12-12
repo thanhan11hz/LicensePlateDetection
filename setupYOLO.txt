@@ -1,0 +1,45 @@
+# Set up môi trường Python trên Linux
+apt update
+apt install -y python3 python3-pip python3-venv
+python3 -m venv venv
+source venv/bin/activate
+
+# Clone thư mục từ drive
+apt install -y rclone
+rclone config
+n
+drive
+drive
+Enter
+Enter
+1
+Enter
+Enter
+n
+y
+Dang nhap
+n
+y
+q
+
+# Tải thư mục từ drive
+
+mkdir -p /root/yolo_dataset
+rclone copy "drive:/Đại học/Năm 2/images.zip" /root/yolo_dataset -P
+rclone copy "drive:/Đại học/Năm 2/YOLO_labels.zip" /root/yolo_dataset -P
+
+# Unzip thư mục
+apt install -y unzip
+unzip __tenfile
+
+# Cài các package để train model
+- Pytorch
+source /root/venv/bin/activate
+pip uninstall torch torchvision torchaudio -y
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+- Ultralytics
+pip install -U ultralytics
+yolo checks
+apt install -y libgl1
+apt install -y libglib2.0-0
+
